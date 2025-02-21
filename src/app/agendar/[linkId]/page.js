@@ -18,7 +18,13 @@ const getPrestadorByLink = async (linkId) => {
     horariosDisponiveis: ['09:00', '10:30', '12:00', '14:30', '15:15', '16:00']
   };
 };
-
+export function generateStaticParams() {
+    return [
+      { linkId: 'exemplo' },
+      { linkId: 'teste' },
+      // Adicione outros IDs que você quer pré-renderizar
+    ]
+  }
 export default function AgendamentoPage({ params }) {
   // Usar React.use para desempacotar params
   const unwrappedParams = use(params);
